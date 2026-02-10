@@ -25,6 +25,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 $count_sql = "SELECT COUNT(*) as unread FROM notifications WHERE user_id = '$user_id' AND is_read = 0";
 $count_res = mysqli_fetch_assoc(mysqli_query($conn, $count_sql));
 
+//Changes 
 echo json_encode([
     'notifications' => $notifications,
     'unread_count' => $count_res['unread']
