@@ -106,7 +106,7 @@ CREATE TABLE `projects` (
   FOREIGN KEY (`client_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
+----------------------------------------------------------
 
 -- Table structure for table `reviews`
 CREATE TABLE `reviews` (

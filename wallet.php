@@ -14,7 +14,7 @@ $trans_res = mysqli_query($conn, $trans_sql);
     <h2 class="mt-3">My Wallet</h2>
     <div class="card text-center" style="background: #e3f2fd; padding: 40px;">
         <h3>Current Balance</h3>
-        <h1 style="color: var(--primary-color);">LKR <?php echo number_format($wallet['balance'], 2); ?></h1>
+        <h1 style="color: var(--primary-color);">LKR <?php echo number_format($wallet['balance'] ?? 0, 2); ?></h1>
         <?php if ($_SESSION['role'] == 'client'): ?>
             <button class="btn btn-primary" onclick="alert('Simulation: Funds Added!');">Add Funds (Simulated)</button>
         <?php endif; ?>
