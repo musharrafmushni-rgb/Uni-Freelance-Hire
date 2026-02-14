@@ -198,6 +198,7 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id='$u
     </div>
 
     <!-- Danger Zone -->
+    <?php if ($user['role'] !== 'admin' || (isset($user['admin_type']) && $user['admin_type'] !== 'super')): ?>
     <div class="card mt-3" style="border: 1px solid #dc3545;">
         <h3 style="color: #dc3545;">Danger Zone</h3>
         <p>Deactivating your account will disable your access. You will not be able to log in until an admin reactivates your account.</p>
@@ -205,6 +206,7 @@ $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM users WHERE id='$u
             <button type="submit" name="deactivate_account" class="btn btn-danger">Deactivate Account</button>
         </form>
     </div>
+    <?php endif; ?>
 </div>
 
 <?php include 'includes/footer.php'; ?>

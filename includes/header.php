@@ -55,6 +55,8 @@ include_once __DIR__ . '/functions.php';
                     <a href="client_projects.php">Hired Projects</a>
                 <?php elseif ($_SESSION['role'] == 'admin'): ?>
                     <a href="admin_dashboard.php">Dashboard</a>
+                <?php else: ?>
+                    <a href="support_chat.php">Support</a>
                 <?php endif; ?>
                 
                 <!-- Notification Bell -->

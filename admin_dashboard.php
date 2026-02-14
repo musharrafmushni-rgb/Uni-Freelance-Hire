@@ -14,21 +14,24 @@ $users_res = mysqli_query($conn, "SELECT * FROM users ORDER BY created_at DESC L
 ?>
 
 <div class="container">
-    <h2 class="mt-3">Admin Dashboard</h2>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 class="mt-3">Admin Dashboard</h2>
+        <a href="admin_add_subadmin.php" class="btn btn-primary">Add New Sub Admin</a>
+    </div>
     
     <div style="display: flex; gap: 20px; margin-bottom: 30px;">
-        <div class="card text-center" style="flex: 1; background: #e3f2fd;">
+        <a href="admin_users.php?role=student" class="card text-center" style="flex: 1; background: #e3f2fd; text-decoration: none; color: inherit; transition: transform 0.2s;">
             <h3><?php echo $stats['students']; ?></h3>
             <p>Students</p>
-        </div>
-        <div class="card text-center" style="flex: 1; background: #e8f5e9;">
+        </a>
+        <a href="admin_users.php?role=client" class="card text-center" style="flex: 1; background: #e8f5e9; text-decoration: none; color: inherit; transition: transform 0.2s;">
             <h3><?php echo $stats['clients']; ?></h3>
             <p>Clients</p>
-        </div>
-        <div class="card text-center" style="flex: 1; background: #fff3e0;">
+        </a>
+        <a href="admin_jobs.php" class="card text-center" style="flex: 1; background: #fff3e0; text-decoration: none; color: inherit; transition: transform 0.2s;">
             <h3><?php echo $stats['jobs']; ?></h3>
             <p>Jobs Posted</p>
-        </div>
+        </a>
         <div class="card text-center" style="flex: 1; background: #fce4ec;">
             <h3><?php echo $stats['projects']; ?></h3>
             <p>Completed Projects</p>
